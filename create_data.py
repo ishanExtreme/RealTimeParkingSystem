@@ -62,6 +62,5 @@ white_yellow_images = list(map(select_rgb_white_yellow, test_images))
 gray_images = list(map(convert_gray_scale, white_yellow_images))
 
 
-
 # Uncomment this line during testing to determine if the greyscales are being converted fine enough
-#show_images(gray_images)
+# show_images(gray_images)
