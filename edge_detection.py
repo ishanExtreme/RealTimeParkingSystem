@@ -23,7 +23,7 @@ def detect_edges(image, low_threshold=50, high_threshold=200):
 edge_images = list(map(lambda image: detect_edges(image), gray_images)) # creating a map and applying the Canny edge detection
 
 # Uncomment the line to display the image, for testing purposes
-#show_images(edge_images)
+show_images(edge_images)
 
 ###############################################################################################################################
 
@@ -63,7 +63,7 @@ def select_region(image):
 roi_images = list(map(select_region, edge_images))
 
 # Uncomment this line to test for the region of interest detection
-#show_images(roi_images)
+show_images(roi_images)
 
 #######################################################################################################
 
@@ -91,7 +91,7 @@ line_images = []
 for image, lines in zip(test_images, list_of_lines):
     line_images.append(draw_lines(image, lines))
 
-#show_images(line_images)
+show_images(line_images)
 #################################
 #######################################################################################################
 
@@ -164,7 +164,7 @@ for image, lines in zip(test_images, list_of_lines):
     rect_images.append(new_image)
     rect_coords.append(rects)
     
-#show_images(rect_images)
+show_images(rect_images)
 
 #######################################################################################################
 
@@ -228,7 +228,7 @@ for image, rects in zip(test_images, rect_coords):
     delineated.append(new_image)
     spot_pos.append(spot_dict)
     
-#show_images(delineated)
+show_images(delineated)
 
 #######################################################################################################
 
@@ -242,7 +242,7 @@ def assign_spots_map(image, spot_dict=final_spot_dict, make_copy = True, color=[
     return new_image
 
 marked_spot_images = list(map(assign_spots_map, test_images))
-#show_images(marked_spot_images)
+show_images(marked_spot_images)
 #######################################################################################################
 
 import pickle
@@ -267,5 +267,5 @@ def save_images_for_cnn(image, folder_name, spot_dict = final_spot_dict):
         
         cv2.imwrite(os.path.join(folder_name, filename), spot_img)
         
-# save_images_for_cnn(test_images[0], 'cnntrain_cnn/')
-# save_images_for_cnn(test_images[1], 'cnntest_cnn/')
+save_images_for_cnn(test_images[0], 'cnn\\train_cnn\\')
+save_images_for_cnn(test_images[1], 'cnn\\test_cnn\\')
