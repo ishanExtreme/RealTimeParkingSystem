@@ -8,11 +8,6 @@ Project update log:
 
 3. From the images taken in step 2, import images one by one and create dataset for  training and testing the CNN.
 
-    a. 
-    b.
-    b.
-
-
 
 4. To detect, images = [cv2.imwrite(path) for path in glob.glob()].
    shape[0] = rows, shape[1] = columns
@@ -26,3 +21,13 @@ Project update log:
 
 Huge shoutout to Priya Dwivedi (https://towardsdatascience.com/find-where-to-park-in-real-time-using-opencv-and-tensorflow-4307a4c3da03) from whose work
 the current work is inspired.
+
+and Nimish Mishra 2nd year IIIT Kalyani for making things smooth for us and helping in this project 
+
+5. numpy, pandas, opencv, keras, pillow, matplotlib, glob, os, tkinter.
+
+6. Three buttons: understand site, Create training data, predict (edge_detection.py + prediction.py).
+
+7. Booking: book_spot.py 
+
+understand_site -> create_data -> edge_detection -> cnn_model -> prediction -> book_spot 
