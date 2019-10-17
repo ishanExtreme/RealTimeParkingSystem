@@ -2,19 +2,18 @@
 import tkinter
 from tkinter import *
 import sys
+import os
   
-
-
-
-
-
 master = Tk() 
 
 master.title("SLOT BOOKING")
 
 washing = IntVar()
 washing.set = 0
-emptySlots = 20
+file1 = open("empty_slots.txt","r+")
+emptySlots = int(file1.read())
+file1.close()
+ 
 if emptySlots>=400:
     price = "500"
 
@@ -49,14 +48,20 @@ e1.grid(row = 0, column = 1, pady = 5)
 e2.grid(row = 1, column = 1, pady = 5) 
   
 
-def fun():
-    print(e1.get())
+def book():
+    file1 = open("name.txt","w") 
+    file1.write(e1.get()) 
+    file1.close()
+    file2 = open("number_plate.txt","w") 
+    file2.write(e2.get()) 
+    file2.close()
+    os.system('python book_spots.py')
     master.destroy()
-c1 = Checkbutton(master, text = "Vehicle Cleaning",variable=washing) 
-c1.grid(row = 2, column = 0, sticky = W, columnspan = 2) 
+c1 = Checkbutton(master, text = "Vehicle Cleaning",variable=washing)
+c1.grid(row = 2, column = 0, sticky = W, columnspan = 2)
 
 
-Button(master,text="BOOK NOW",bg = "yellow",height = 3,width=20,command = fun).grid(row=3,column=1,sticky=S)
+Button(master,text="BOOK NOW",bg = "yellow",height = 3,width=20,command = book).grid(row=3,column=1,sticky=S)
  
  
 
