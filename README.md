@@ -1,2 +1,4 @@
 # parking_system
- To develop a real-time parking system
+ project on parking booking and spoting empty spaces in parking through deep learning.
+
+
