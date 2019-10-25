@@ -7,7 +7,7 @@ root = tkinter.Tk()
 root.geometry("400x200")
 root.title("FRAME COUNTER")
 frame_1 = Frame(root) 
-frame_1.pack(side = LEFT,expand = True, fill = BOTH) 
+frame_1.pack(side = LEFT,expand = True, fill = BOTH ) 
 counter = tkinter.IntVar()
 counter.set(400)
 def increase(event=None):
@@ -28,15 +28,20 @@ tkinter.Label(frame_1, textvariable=counter).pack()
 tkinter.Button(frame_1, text="+", command=increase, fg="dark green", bg = "white").pack(side = RIGHT, expand = True, fill = BOTH)
 
 tkinter.Button(frame_1, text="-", command=decrease, fg="dark green", bg = "white").pack(side = LEFT, expand = True, fill = BOTH)
+
+
 ########################################################################################
 frame_3 = Frame(root) 
 frame_3.pack(side = LEFT,expand = True, fill = BOTH) 
 frame_3.config(bg="green")
 #######################################################################################
 frame_2 = Frame(root) 
-frame_2.pack(side = RIGHT,expand = True, fill = BOTH) 
+frame_2.pack(side = RIGHT,expand = True,fill = BOTH) 
 counter_2 = tkinter.IntVar()
 counter_2.set(800)
+
+
+
 def increaseFor2(event=None):
     counter_2.set(counter_2.get() + 1)
 
