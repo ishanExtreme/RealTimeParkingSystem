@@ -4,8 +4,9 @@ import cv2
 import os, glob
 import numpy as np
 # Somehow this shows unresolved imports but that's not a big problem
-from constants import frame1, frame2, ip
-
+from GuiForFrame import counter,counter_2
+frame1 = counter.get()
+frame2 = counter_2.get()
 
 
 
